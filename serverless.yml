@@ -1,0 +1,28 @@
+org: scottdavidreynolds
+app: mediashuttle-metadata-distribute
+service: api
+useDotenv: true
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: us-west-2
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+    environment:
+        MS_API_KEY: ${param:MS_API_KEY}
+        X_AWS_ACCESS_KEY_ID: ${param:X_AWS_ACCESS_KEY_ID}
+        X_AWS_SECRET_ACCESS_KEY: ${param:X_AWS_SECRET_ACCESS_KEY}
+        
+
+plugins:
+  - serverless-offline

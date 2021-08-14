@@ -1,0 +1,26 @@
+{
+  "name": "metadataform",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app",
+    "startdeov": "nodemon app"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.8.0",
+    "axios": "^0.21.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "media_shuttle_api": "github:Signiant/api_client_node_media_shuttle#1.13.3",
+    "path": "^0.12.7",
+    "querystring": "^0.2.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
